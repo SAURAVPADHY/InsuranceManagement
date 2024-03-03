@@ -4,10 +4,10 @@ node{
     
     stage('Prepare Environment'){
         echo 'Initialize Environment'
-        mavenHome = tool name: 'maven' , type: 'maven'
-        mavenCMD = "${mavenHome}/bin/mvn"
+        // mavenHome = tool name: 'maven' , type: 'maven'
+        // mavenCMD = "${mavenHome}/bin/mvn"
         tag="3.0"
-	dockerHubUser="anujsharma1990"
+	dockerHubUser="pinkunpadhy1998@gmail.com"
 	containerName="insure-me"
 	httpPort="8081"
     }
@@ -26,7 +26,8 @@ node{
     }
     
     stage('Maven Build'){
-        sh "${mavenCMD} clean package"        
+        // sh "${mavenCMD} clean package"
+	sh "mvn clean package"
     }
     
     stage('Publish Test Reports'){
